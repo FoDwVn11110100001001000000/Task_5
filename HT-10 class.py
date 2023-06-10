@@ -6,17 +6,22 @@ class AddressBook(UserDict):
         self.data[record.name.name] = record
 
 
-class Name:
+class Field:
+    def __init__(self, value):
+        self.value = value
+
+        
+class Name(Field):
     def __init__(self, name):
         self.name = name
 
 
-class Phone:
+class Phone(Field):
     def __init__(self, phone):
         self.value = phone
 
 
-class Record:
+class Record(Field):
     def __init__(self, name, phone):
         self.name = name
         self.phones = [phone]
